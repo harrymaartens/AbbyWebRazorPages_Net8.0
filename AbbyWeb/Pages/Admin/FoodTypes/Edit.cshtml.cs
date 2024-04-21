@@ -1,4 +1,5 @@
 using Abby.DataAccess.Data;
+using Abby.DataAccess.Repositry.IRepositry;
 using Abby.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -8,18 +9,18 @@ namespace AbbyWeb.Pages.Admin.FoodTypes;
 [BindProperties]
 public class EditModel : PageModel
 {
-    private readonly ApplicationDbContext _db;
-   
-    public FoodType FoodType { get; set; }
+	private readonly IUnitOfWork _unitOfWork;
 
-    public EditModel(ApplicationDbContext db)
-    {
-        _db=db;
-    }
+	public FoodType FoodType { get; set; }
 
-    public void OnGet(int id)
+	public EditModel(IUnitOfWork unitOfWork)
+	{
+		_unitOfWork = unitOfWork;
+	}
+
+	public void OnGet(int id)
     {
-		FoodType = _db.FoodType.Find(id);
+		FoodType = _unitOfWork.FoodType.GetFirstOrDefault(u => u.Id == id);
 		//Category = _db.Category.FirstOrDefault(u=>u.Id==id);
 		//Category = _db.Category.SingleOrDefault(u => u.Id == id);
 		//Category = _db.Category.Where(u => u.Id == id).FirstOrDefault();
@@ -29,8 +30,8 @@ public class EditModel : PageModel
     {        
         if (ModelState.IsValid)
         {
-            _db.FoodType.Update(FoodType);
-            await _db.SaveChangesAsync();
+			_unitOfWork.FoodType.Update(FoodType);
+			_unitOfWork.Save();
 			TempData["success"] = "FoodType updated successfully";
 			return RedirectToPage("Index");
         }

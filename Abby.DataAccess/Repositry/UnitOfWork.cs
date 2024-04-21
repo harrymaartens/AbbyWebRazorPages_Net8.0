@@ -13,7 +13,8 @@ namespace Abby.DataAccess.Repositry
 			Category = new CategoryRepositry(_db);
 			FoodType = new FoodTypeRepositry(_db);
 			MenuItem = new MenuItemRepositry(_db);
-		}
+            ShoppingCart = new ShoppingCartRepository(_db);
+        }
 
         public ICategoryRepositry Category {  get; private set; }
 
@@ -21,7 +22,10 @@ namespace Abby.DataAccess.Repositry
 
 		public IMenuItemRepositry MenuItem { get; private set; }
 
-		public void Dispose()
+		public IShoppingCartRepository ShoppingCart { get; private set; }
+
+
+        public void Dispose()
 		{
 			_db.Dispose();
 		}

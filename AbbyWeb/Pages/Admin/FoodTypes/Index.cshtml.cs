@@ -1,4 +1,3 @@
-using Abby.DataAccess.Data;
 using Abby.DataAccess.Repositry.IRepositry;
 using Abby.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;

@@ -1,4 +1,3 @@
-using Abby.DataAccess.Data;
 using Abby.DataAccess.Repositry.IRepositry;
 using Abby.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +30,6 @@ public class CreateModel : PageModel
             TempData["success"] = "FoodType created successfully";
             return RedirectToPage("Index");
         }
-			return Page();
+		return Page();
     }
 }

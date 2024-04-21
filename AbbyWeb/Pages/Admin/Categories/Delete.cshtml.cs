@@ -35,7 +35,7 @@ public class DeleteModel : PageModel
 			_unitOfWork.Save();
 			TempData["success"] = "Category deleted successfully";
 			return RedirectToPage("Index");
-			}
+		}
 		return Page();				
     }
 }

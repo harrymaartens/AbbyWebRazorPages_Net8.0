@@ -1,12 +1,6 @@
 ﻿using Abby.DataAccess.Data;
 using Abby.DataAccess.Repositry.IRepositry;
 using Abby.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Abby.DataAccess.Repositry
 {

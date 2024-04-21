@@ -7,6 +7,9 @@ namespace Abby.DataAccess.Repositry.IRepositry
 		IFoodTypeRepositry FoodType { get; }
 		IMenuItemRepositry MenuItem { get; }
         IShoppingCartRepository ShoppingCart { get; }
+        IOrderHeaderRepository OrderHeader { get; }
+        IOrderDetailRepository OrderDetail { get; }
+        IApplicationUserRepository ApplicationUser { get; }
         void Save();
 	}
 }

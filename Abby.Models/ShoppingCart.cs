@@ -29,8 +29,9 @@ namespace Abby.Models
         public int Count { get; set; }
         
         public string ApplicationUserId { get; set; }
-       
-        [ValidateNever]
+
+		[ForeignKey("ApplicationUserId")]
+		[ValidateNever]
         public ApplicationUser ApplicationUser { get; set; }
     }
 }

@@ -39,7 +39,7 @@ namespace Abby.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category");
+                    b.ToTable("Category", (string)null);
                 });
 
             modelBuilder.Entity("Abby.Models.FoodType", b =>
@@ -56,7 +56,7 @@ namespace Abby.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FoodType");
+                    b.ToTable("FoodType", (string)null);
                 });
 
             modelBuilder.Entity("Abby.Models.MenuItem", b =>
@@ -94,7 +94,7 @@ namespace Abby.DataAccess.Migrations
 
                     b.HasIndex("FoodTypeId");
 
-                    b.ToTable("MenuItem");
+                    b.ToTable("MenuItem", (string)null);
                 });
 
             modelBuilder.Entity("Abby.Models.OrderDetails", b =>
@@ -127,7 +127,7 @@ namespace Abby.DataAccess.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("OrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("Abby.Models.OrderHeader", b =>
@@ -176,7 +176,7 @@ namespace Abby.DataAccess.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("OrderHeader");
+                    b.ToTable("OrderHeader", (string)null);
                 });
 
             modelBuilder.Entity("Abby.Models.ShoppingCart", b =>
@@ -203,7 +203,7 @@ namespace Abby.DataAccess.Migrations
 
                     b.HasIndex("MenuItemId");
 
-                    b.ToTable("ShoppingCart");
+                    b.ToTable("ShoppingCart", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

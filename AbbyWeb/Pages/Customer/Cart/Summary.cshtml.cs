@@ -115,7 +115,7 @@ namespace AbbyWeb.Pages.Customer.Cart
 					options.LineItems.Add(sessionLineItem);
 				}
 
-				var service = new Stripe.Checkout.SessionService();
+				var service = new SessionService();
 				Session session = service.Create(options);
 				Response.Headers.Add("Location", session.Url);
 
@@ -124,6 +124,7 @@ namespace AbbyWeb.Pages.Customer.Cart
 				_unitOfWork.Save();
 				return new StatusCodeResult(303);
 			}
+
 			return Page();
 		}
 	}

@@ -28,6 +28,13 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LogoutPath = "/Identity/Account/Logout";
     options.AccessDeniedPath = "/Identity/Account/AccessDenied";
 });
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+	options.IdleTimeout = TimeSpan.FromMinutes(100);
+	options.Cookie.HttpOnly = true;
+	options.Cookie.IsEssential = true;
+});
 
 // Add globalization
 var cultureInfo = new CultureInfo("nl-NL");
@@ -64,6 +71,8 @@ string key = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
 StripeConfiguration.ApiKey = key;
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapRazorPages();
 

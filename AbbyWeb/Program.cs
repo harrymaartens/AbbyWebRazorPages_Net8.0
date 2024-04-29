@@ -43,6 +43,12 @@ CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
 CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 CultureInfo.CurrentCulture = cultureInfo;
 
+builder.Services.AddAuthentication().AddFacebook(options =>
+{
+    options.AppId = "1626202068147448";
+    options.AppSecret = "a35de678f71d2430556071ed32427d22";
+});
+
 var app = builder.Build();
 
 // Voeg items toe aan de database

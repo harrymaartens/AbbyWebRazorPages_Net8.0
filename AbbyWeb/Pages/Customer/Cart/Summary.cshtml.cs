@@ -80,7 +80,7 @@ namespace AbbyWeb.Pages.Customer.Cart
 				//_unitOfWork.ShoppingCart.RemoveRange(ShoppingCartList);
 				_unitOfWork.Save();
 
-				var domain = "https://localhost:44370/";
+				var domain = "https://localhost:7196/";
 				var options = new SessionCreateOptions
 				{
 					LineItems = new List<SessionLineItemOptions>()

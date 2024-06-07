@@ -1,4 +1,4 @@
-Download deze versie om de diverse account toe te voegen! In de latere versies lukt dat niet meer omdat ze er al in horen te zitten.
+Download deze versie om de diverse accounts zoals manager@dotnetmastery.com, customer@dotnetmastery.com, front@dotnetmastery.com, kitchen@dotnetmastery.com en appuser@dotnetmastery.com toe te voegen! In de latere versies lukt dat niet meer omdat ze er al in horen te zitten.
 
 https://github.com/harrymaartens/AbbyRazorPagesNET8.0/tree/756442d5e944f3aa91c6553d3b2e02f4830e1573
 
